@@ -2,7 +2,7 @@ import serial
 import time
 
 ser = serial.Serial()
-ser.baudrate = 9600
+ser.baudrate = 115200
 ser.port = '/dev/ttyACM0'
 ser.open()
 f = open('testData.csv','a')
