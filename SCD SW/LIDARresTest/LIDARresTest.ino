@@ -118,12 +118,12 @@ void loop()
   */
 
   // Take a measurement with receiver bias correction and print to serial terminal
-  Serial.println(myLidarLite.distance());
+  //Serial.println(myLidarLite.distance());
 
   // Take 99 measurements without receiver bias correction and print to serial terminal
   for(int i = 0; i < 99; i++)
   {
-    Serial.println(myLidarLite.distance(false));
+    //Serial.println(myLidarLite.distance(false));
   }
   
   int reading  = analogRead(lightPin);
