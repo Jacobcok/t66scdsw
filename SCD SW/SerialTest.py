@@ -15,6 +15,6 @@ while time.time()< t_end:
 		f.write(temp)
 		temp = ser.read()
 	f.write(",")
-	f.write("Trees")
+	f.write("Trees\n")
 	f.close()
 	f = open('testData.csv','a')
