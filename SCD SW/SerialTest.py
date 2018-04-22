@@ -7,9 +7,13 @@ ser.port = '/dev/ttyACM0'
 ser.open()
 f = open('testData.csv','a')
 t_end = time.time() + 5
+temp = "0"
 
 while time.time()< t_end:
-	f.write(ser.read())
+	temp = ser.read()
+	while temp != "\n":
+		f.write(temp)
+		temp = ser.read()
 	f.write(",/n")
 	f.close()
 	f = open('testData.csv','a')
