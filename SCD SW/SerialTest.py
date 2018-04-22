@@ -14,7 +14,8 @@ while time.time()< t_end:
 	while (temp != "\n") and (temp != "\r"):
 		f.write(temp)
 		temp = ser.read()
-	f.write(",")
-	f.write("Trees\n")
+	if temp == "\n":
+		f.write(",")
+		f.write("Trees\n")
 	f.close()
 	f = open('testData.csv','a')
