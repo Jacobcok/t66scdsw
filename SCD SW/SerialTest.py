@@ -14,6 +14,6 @@ while time.time()< t_end:
 	while temp != "\n":
 		f.write(temp)
 		temp = ser.read()
-	f.write(",/n")
+	f.write(",\n")
 	f.close()
 	f = open('testData.csv','a')
