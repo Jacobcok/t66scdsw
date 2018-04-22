@@ -11,7 +11,7 @@ temp = "0"
 
 while time.time()< t_end:
 	temp = ser.read()
-	while (temp != "\n")|(temp != "\r"):
+	while (temp != "\n") and (temp != "\r"):
 		f.write(temp)
 		temp = ser.read()
 	f.write(",")
