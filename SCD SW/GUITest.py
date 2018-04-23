@@ -21,10 +21,15 @@ log.pack()
 
 def callback():
 	text = log.get()
+
+def calltest():
+	print log.get()
 	
 # create button 
 B = Button(master, text="save name", width=11, command=callback)
 B.pack(side=RIGHT)
+C = Button(master, text="print text", width=11, command=calltest)
+C.pack(side=RIGHT)
 
 mainloop()
 log.Entry(master, width=50)

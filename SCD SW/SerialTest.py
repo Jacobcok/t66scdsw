@@ -18,5 +18,5 @@ while time.time()< t_end:
 	if temp == "\n":
 		f.write(",")
 		f.write("%s\n" % (time.time() - startTime))
-	f.close()
-	f = open('testData.csv','a')
+#	f.close()
+#	f = open('testData.csv','a')

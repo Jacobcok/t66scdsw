@@ -10,7 +10,8 @@ void setup()
 void loop()
 {
   Serial.println(temp);
-  delay(100);
+//  Serial.print("\n");
+//  delay(100);
   temp++;
 }
 
