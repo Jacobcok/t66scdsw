@@ -11,7 +11,7 @@ void loop()
 {
   Serial.println(temp);
 //  Serial.print("\n");
-//  delay(100);
+  delay(100);
   temp++;
 }
 
