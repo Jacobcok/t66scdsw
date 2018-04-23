@@ -30,29 +30,37 @@ def printText():
 	# find the time when button call started
 	startTime = time.time()
 	# find the time for how long the duration of the test
-	t_end = time.time() + 5
-
-	# calculate percent complete (not working yet)
-	percentComplete = time.time() / t_end
+	t_end = startTime + 5
+	# file name, appending mode	
 	f = open(name,'a')
 	print('start recording serial')
 
-	# 5 sec loop of writing serial to file 'name'
+	# loop of writing serial to file 'name'
 	update_progress(0)
 	while time.time() < t_end:
+
+		# progress bar
+		numer = int(100*(time.time() - startTime))
+		denom = int(100*(t_end - startTime))
+		percentComplete = 100*numer/denom	
+		update_progress(percentComplete)
+
 		temp = ser.read()
+		# write serial to 'name' unless end of line or carridge return
 		while (temp != "\n") and (temp != "\r"):
 			f.write(temp)
 			temp = ser.read()
+		# if end of line append comma seperation and timestamp to 'name'
 		if temp == "\n":
 			f.write(",")
 			f.write("%s\n" % (time.time() - startTime))
-	print('done recording serial')
 	update_progress(100)
-	sys.exit()
+	print('\ndone recording serial')
 
+# proress bar. 0 < 'progress' < 100
 def update_progress(progress):
-    print '\r[{0}] {1}%'.format('#'*(progress/10), progress)
+    sys.stdout.write('\r Progress: {1}% [{0}{2}]'.format('#'*(progress/2), progress,'_'*(50-(progress/2))))
+    sys.stdout.flush()
 
 
 # create button 
