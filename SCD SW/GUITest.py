@@ -9,7 +9,7 @@ temp = "0"
 name = ''
 
 # serial for linux
-ser = serial.Serial("/dev/ttyACM0", baudrate=115200, timeout=0)
+ser = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=0)
 
 # enables gui window
 master = Tk()

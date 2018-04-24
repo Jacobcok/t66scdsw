@@ -3,11 +3,11 @@ import time
 
 startTime = time.time()
 ser = serial.Serial()
-ser.baudrate = 115200
-ser.port = '/dev/ttyACM0'
+ser.baudrate = 9600
+ser.port = '/dev/ttyACM1'
 ser.open()
 f = open('testData.csv','a')
-t_end = time.time() + 5
+t_end = time.time() + 20
 temp = "0"
 
 while time.time()< t_end:
@@ -17,6 +17,7 @@ while time.time()< t_end:
 		temp = ser.read()
 	if temp == "\n":
 		f.write(",")
-		f.write("%s\n" % (time.time() - startTime))
+		f.write("\n")
+		#f.write("%s\n" % (time.time() - startTime))
 #	f.close()
 #	f = open('testData.csv','a')
