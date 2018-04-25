@@ -4,7 +4,7 @@ import time
 startTime = time.time()
 ser = serial.Serial()
 ser.baudrate = 9600
-ser.port = '/dev/ttyACM1'
+ser.port = '/dev/ttyACM0'
 ser.open()
 f = open('testData.csv','a')
 t_end = time.time() + 20

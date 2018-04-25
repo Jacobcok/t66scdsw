@@ -9,7 +9,7 @@ temp = "0"
 name = ''
 
 # serial for linux
-# ser = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=0)
+ser = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=0)
 
 # enables gui window
 master = Tk()
@@ -59,11 +59,11 @@ def printText():
 		percentComplete = 100*numer/denom	
 		update_progress(percentComplete)
 
-		temp = "\n" # ser.read()
+		temp = ser.read()
 		# write serial to 'name' unless end of line or carridge return
 		while (temp != "\n") and (temp != "\r"):
 			f.write(temp)
-			temp = "temp data" # ser.read()
+			temp = ser.read()
 		# if end of line append comma seperation and timestamp to 'name'
 		if temp == "\n":
 			f.write(",")
